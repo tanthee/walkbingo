@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+  散歩ビンゴ (Walk Bingo)
+  
+  概要: 散歩中に見つけたものでビンゴを楽しむスマートフォン向けWebアプリ
+  主な仕様:
+    - 5x5のビンゴカード（中央はフリーマス）
+    - 「リロール」ボタンで項目をランダムに入れ替え
+    - 「開始」ボタンでカードを確定（ページリロードまで変更不可）
+    - マスをタップすると◯マークが付く
+    - 完成したライン数をリアルタイム表示
+  制限事項:
+    - GitHub Pages でホストする静的サイト
+    - 項目は data/items.txt から読み込み（プレースホルダー対応）
+-->
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>散歩ビンゴ</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- ヘッダー -->
+    <header class="header">
+      <h1 class="header__title">🚶 散歩ビンゴ</h1>
+      <p class="header__subtitle">散歩中に見つけたものでビンゴをしよう！</p>
+    </header>
+
+    <!-- ライン数表示 -->
+    <div class="lineCount">
+      <span class="lineCount__label">ビンゴ</span>
+      <span class="lineCount__value" id="lineCountValue">0</span>
+      <span class="lineCount__unit">ライン</span>
+    </div>
+
+    <!-- ビンゴカード -->
+    <div class="bingoCard" id="bingoCard">
+      <!-- JavaScriptで5x5のマスを生成 -->
+    </div>
+
+    <!-- 操作ボタン -->
+    <div class="controls">
+      <button class="controls__button controls__button--reroll" id="rerollButton">
+        🔄 リロール
+      </button>
+      <button class="controls__button controls__button--start" id="startButton">
+        ▶ 開始
+      </button>
+    </div>
+
+    <!-- ステータスメッセージ -->
+    <div class="status" id="statusMessage">
+      「リロール」で項目を入れ替え、「開始」でビンゴスタート！
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
